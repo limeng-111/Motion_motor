@@ -224,6 +224,5 @@ ani = FuncAnimation(
 )
 
 plt.tight_layout()
-ani.save("motor.gif", writer="pillow", fps=30)
 plt.show()
 
