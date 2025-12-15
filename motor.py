@@ -214,15 +214,20 @@ def update(frame):
 
     return ball, time_text
 
+duration = 1.5  # seconds
+frames = np.where(t <= duration)[0]
+
 ani = FuncAnimation(
     fig,
     update,
-    frames=len(t_traj),
+    frames=frames,     # <<< only the first 1.5s
     init_func=init,
-    interval=20,   # 毫秒
+    interval=20,
     blit=True
 )
 
+
 plt.tight_layout()
+ani.save("motor.gif", writer="pillow", fps=30)
 plt.show()
 
